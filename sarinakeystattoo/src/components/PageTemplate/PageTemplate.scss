@@ -1,0 +1,23 @@
+@import '../../scss/fonts';
+
+.app {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+	&__header {
+		height: 14vh;
+	}
+
+	&__content {
+		flex: 1 0 auto;
+		height: 60vh;
+		padding-bottom: 3vh;
+		overflow: auto;
+
+		&--title {
+			font-family: 'gothican';
+			font-size: 3rem;
+		}
+	}
+}

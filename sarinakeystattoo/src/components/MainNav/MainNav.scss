@@ -1,0 +1,29 @@
+@import '../../scss/fonts';
+
+.main-nav {
+	float:  left;
+	width: 25%;
+	height: 65vh;
+	font-family: 'gothican';
+
+	&__list {
+		list-style: none;
+		margin-top: 0;
+		padding:  100px 0 0 100px;
+
+		&--item {
+			padding-bottom: 60px;
+		}
+
+		&--link {
+			color: #e381e4;
+			padding-left: 30px;
+			font-size: 5rem;
+			text-decoration: none;
+		}
+
+		&--container {
+			width: 50%;
+		}
+	}
+}

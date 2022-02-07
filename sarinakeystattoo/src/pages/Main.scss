@@ -1,0 +1,22 @@
+.intro {
+	position: absolute;
+	top: 0;
+	left: 800px;
+	z-index: -1;
+	overflow: hidden;
+	max-height: 100vh;
+
+	&::after {
+		box-shadow: 0 0 15px 15px black inset;
+		content: '';
+		display: block;
+	 	height: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	img {
+		max-height: 100vh;
+	}
+}

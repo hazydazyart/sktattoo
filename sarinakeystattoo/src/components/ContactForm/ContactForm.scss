@@ -1,0 +1,155 @@
+.contact-form {
+	width: 45%;
+	display: inline-block;
+
+	label {
+	  color: white;
+	  font-size: 1.2rem;
+	}
+
+	&__text {
+		width: 100%;
+		padding: 0.5rem 0;
+	  	margin: 0.5rem 0;
+		background-color: black;
+	  	color: white;
+	  	border-top: none;
+	  	border-left: none;
+	  	border-right: none;
+	  	border-bottom: 2px solid #e381e4;
+	    font-size: 1rem;
+	  	line-height: 1rem;
+	}
+
+	&__checkboxes {
+		margin-top: 15px;
+		margin-bottom: 20px;
+	}
+
+	&__checkbox-container {
+		parent-selector: &;
+		display: block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		font-size: 22px;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		&:hover input ~ &--checkmark {
+			background-color: #424242;
+		}
+
+		&:hover input:checked ~ &--checkmark {
+			background-color: #000000;
+			outline: 1px solid white;
+		}
+
+		input:checked ~ &--checkmark {
+			background-color: #e381e4;
+		}
+
+		input:checked ~ &--checkmark:after {
+			display: block;
+		}
+
+		input {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 0;
+			width: 0;
+		}
+
+		&--checkmark {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 25px;
+			width: 25px;
+			background-color: #eee;
+
+			&::after {
+				content: "";
+				position: absolute;
+				display: none;
+				left: 9px;
+				top: 5px;
+				width: 5px;
+				height: 10px;
+				border: solid white;
+				border-width: 0 3px 3px 0;
+				-webkit-transform: rotate(45deg);
+				-ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	fieldset {
+	  margin-top: 0.5rem;
+	  margin-bottom: 0.5rem;
+	  border: 1px solid white;
+	  box-shadow: 0px 0px 2px white;
+	}
+
+	legend, &__submit {
+	  background-color: #e381e4;
+	  padding: 0.75rem;
+	  font-size: 1.3rem;
+	  color: white;
+	  transform: translateX(-1.1rem);
+	  box-shadow: -1px 1px 1px rgba(255, 255, 255, .8);
+	}
+
+	&__submit {
+	  transform: none;
+	  box-shadow: none;
+	  border: 2px solid white;
+	  width: 100%;
+	  margin-top: 10px;
+
+		&:hover {
+		  background-color: black;
+		  cursor: pointer;
+		}
+	}
+
+	legend:after {
+	  content: "";
+	  height: 0;
+	  width:0;
+	  background-color: transparent;
+	  border-top: 0.0rem solid transparent;
+	  border-right:  0.35rem solid white;
+	  border-bottom: 0.45rem solid transparent;
+	  border-left: 0.0rem solid transparent;
+	  position:absolute;
+	  left:-0.075rem;
+	  bottom: -0.45rem;
+	}
+
+	&__upload {
+		label {
+			display: block;
+		}
+
+		input {
+			display: none;
+		}
+
+		margin-top: 1rem;
+
+		&--button {
+			margin-top: 1rem;
+			background-color: #e381e4;
+			color: white;
+			padding: 0.5rem;
+			cursor: pointer;
+			display: inline-block;
+		}
+	}
+}
