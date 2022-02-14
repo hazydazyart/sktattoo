@@ -5,16 +5,18 @@ import './PageTemplate.scss';
 
 export default function PageTemplate({ children, title }) {
   return (
-    <div className='app'>
-      <header className='app__header'>
-        <LogoText />
-      </header>
-      <div className='app__content'>
-        <MainNav />
-        <div className='app__content--title'>
-          <h2>{title}</h2>
+    <div className='page'>
+      <div className='app'>
+        <header className='app__header'>
+          <LogoText />
+        </header>
+        <div className='app__content'>
+          <MainNav />
+          <div className='app__content--container'>
+            <h2 className='app__content--title'>{title}</h2>
+            {children}
+          </div>
         </div>
-        {children}
       </div>
       <Footer />
     </div>
