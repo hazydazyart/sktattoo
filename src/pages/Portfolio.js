@@ -8,7 +8,7 @@ export default function Portfolio() {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    axios.get('https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp&access_token=IGQVJYUmEzRlpKdENicnRZAa01aU05VY292ZA2V5ZAHpXMV96WHNnSGNHcFJlWlZAQRXBZAd3VtWjVtN001ajJORjBwaUt4TXIwU296cEVQOEhvYlB2WWhwR2p0WjRxY0tsVmpNbXZAxd3FoTGQ3dnc1dzl3QgZDZD')
+    axios.get('https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,timestamp&access_token=IGQVJXbjBmODZAOZAG1ib3hlOXBMWmhjWTdFeUhoWDhFOEdaMmdLeUxGQm9jVzNrcE8wRWdLWFZAkYXd4ZA2dadmI0OW5sT0tnZAFBQa2ZARNUpuanJGWXRBcno0SUVHN1FaYU5jTDFMOUR5RzJUSmhQaUxjQwZDZD')
       .then(res => {
         setImages(res.data.data);
         setIsLoading(false);
