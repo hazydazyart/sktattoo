@@ -1,29 +1,51 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
+import { init, sendForm } from '@emailjs/browser';
 import './ContactForm.scss';
 
 export default function Contact() {
+  const [message, setMessage] = useState('');
+  const [file, setFile] = useState();
   const uploadRef = useRef(null);
+  const formRef = useRef(null);
+
+  init('user_3AIpj3qJ9uTGbPExw1qby');
 
   const handleUploadClick = () => {
     uploadRef.current.click();
   }
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    sendForm('service_lcjhbpj', 'template_fxt1asb', formRef.current)
+      .then((result) => {
+          setMessage('Email sent!')
+      }, (error) => {
+          setMessage(error.text);
+      });
+  };
+
+  const changeHandler = (e) => {
+    setFile(e.target.files[0]);
+  };
+
   return (
     <div className='contact-form'>
-      <form>
+      {message && <div className='contact-form__notification' aria-live='polite'>{message}</div>}
+      <form ref={formRef} onSubmit={sendEmail}>
         <div>
           <fieldset>
             <legend>Who are you</legend>
             <div>
-              <label className='contact-form__text--label' for='name'>Name</label>
+              <label className='contact-form__text--label' htmlFor='name'>Name</label>
               <input className='contact-form__text' type='text' name='name' id='name' />
             </div>
             <div>
-              <label className='contact-form__text--label' for='email'>Email</label>
+              <label className='contact-form__text--label' htmlFor='email'>Email</label>
               <input className='contact-form__text' type='email' name='email' id='email' />
             </div>
             <div>
-              <label className='contact-form__text--label' for='phone'>Phone Number</label>
+              <label className='contact-form__text--label' htmlFor='phone'>Phone Number</label>
               <input className='contact-form__text' type='text' name='phone' id='phone' />
             </div>
           </fieldset>
@@ -49,17 +71,18 @@ export default function Contact() {
             </label>
           </div>
           <div>
-            <label className='contact-form__text--label' for='description'>Detailed description</label>
-            <textarea className='contact-form__text' id='description' placeholder='Size, location, design' />
+            <label className='contact-form__text--label' htmlFor='description'>Detailed description</label>
+            <textarea className='contact-form__text' name='description' placeholder='Size, location, design' />
           </div>
           <div>
-            <label className='contact-form__text--label' for='budget'>Budget</label>
-            <input className='contact-form__text' type='text' id='budget' placeholder='$100-$5000' />
+            <label className='contact-form__text--label' htmlFor='budget'>Budget</label>
+            <input className='contact-form__text' type='text' name='budget' id='budget' placeholder='$100-$5000' />
           </div>
           <div className='contact-form__upload'>
-            <label className='contact-form__text--label' for='reference'>Reference image</label>
+            <label className='contact-form__text--label' htmlFor='reference'>Reference image</label>
             <div className='contact-form__upload--button' role='button' onClick={() => handleUploadClick()}>Upload a file</div>
-            <input type='file' id='reference' ref={uploadRef} />
+            <input type='file' id='reference' name='reference' ref={uploadRef} onChange={changeHandler} />
+            {file && <div>{file.name}</div>}
           </div>
         </fieldset>
         <button className='contact-form__submit'>Submit</button>
