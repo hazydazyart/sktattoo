@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
+import picture1 from '../../images/portfolio/1.jpg';
+import picture2 from '../../images/portfolio/2.jpg';
+import picture3 from '../../images/portfolio/3.jpg';
+import picture4 from '../../images/portfolio/4.jpg';
+import picture5 from '../../images/portfolio/5.jpg';
+import picture6 from '../../images/portfolio/6.jpg';
+import picture7 from '../../images/portfolio/7.jpg';
+import picture8 from '../../images/portfolio/8.jpg';
 import Modal from 'react-bootstrap/Modal';
 import './ImageGallery.scss';
 
-export default function ImageGallery({ images }) {
+export default function ImageGallery() {
   const [selectedImage, setSelectedImage] = useState({});
   const [showModal, setShowModal] = useState(false);
 
@@ -10,6 +18,8 @@ export default function ImageGallery({ images }) {
     setSelectedImage(image);
     setShowModal(true);
   }
+
+  const images = [picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8];
 
   return (
     <div className='image-gallery'>
@@ -24,10 +34,7 @@ export default function ImageGallery({ images }) {
             >
               <img
                 className='image-gallery__image'
-                src={image.media_url}
-                alt={image.caption}
-                title={image.caption}
-                key={image.id}
+                src={image}
               />
               <div className='image-gallery__view-larger'>View</div>
             </button>
@@ -53,10 +60,9 @@ export default function ImageGallery({ images }) {
           <div className='image-gallery-modal__body'>
             <img
               className='image-gallery-modal__image'
-              src={selectedImage.media_url}
+              src={selectedImage}
             />
           </div>
-          <div>{selectedImage.caption}</div>
         </Modal.Body>
       </Modal>
     </div>
