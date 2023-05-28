@@ -7,6 +7,10 @@ import picture5 from '../../images/portfolio/5.jpg';
 import picture6 from '../../images/portfolio/6.jpg';
 import picture7 from '../../images/portfolio/7.jpg';
 import picture8 from '../../images/portfolio/8.jpg';
+import picture9 from '../../images/portfolio/9.jpg';
+import picture10 from '../../images/portfolio/10.jpg';
+import picture11 from '../../images/portfolio/11.jpg';
+import picture12 from '../../images/portfolio/12.jpg';
 import Modal from 'react-bootstrap/Modal';
 import './ImageGallery.scss';
 
@@ -19,7 +23,7 @@ export default function ImageGallery() {
     setShowModal(true);
   }
 
-  const images = [picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8];
+  const images = [picture12, picture11, picture10, picture9, picture1, picture2, picture3, picture4, picture5, picture6, picture7, picture8];
 
   return (
     <div className='image-gallery'>
