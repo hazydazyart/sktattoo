@@ -1,49 +1,115 @@
-@import '../../scss/fonts';
+.homepage {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgb(35, 36, 40);
 
-.app {
- 	position: relative;
- 	min-height: 90vh;
+  &__divider-container {
+    text-align: center;
+  }
 
- 	@media only screen and (max-width: 600px) {
- 		min-height: 84vh;
- 	}
+  &__divider {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    height: 8rem;
+  }
 
-	&__header {
-		height: 14vh;
+  &__title {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    justify-content: space-between;
+  }
 
-		@media only screen and (max-width: 992px) {
-			height: auto;
-		}
-	}
+  &__corner {
+    &--left {
+      height: 12rem;
+    }
 
-	&__content {
-	    display: flex;
-	    flex-direction: row;
-	    flex-wrap: wrap;
-	    width: 100%;
+    &--right {
+      height: 12rem;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
 
-		@media only screen and (max-width: 600px) {
-			flex-direction: column;
-		}
+  &__bottom {
+  	padding: 2rem 0;
+  	text-align: center;
 
-		&--container {
-    		display: flex;
-    		flex-direction: column;
-    		flex: 3;
+  	img {
+  		width: 75%;
+  	}
+  }
+}
 
-    		@media only screen and (max-width: 600px) {
-    			padding: 0 20px;
-    		}
-		}
+.address {
+  font-size: 2rem;
+  color: #F2D399;
+  font-family: 'bittersweet';
+  text-align: center;
+}
 
-		&--title {
-			font-family: 'gothican';
-			font-size: 3rem;
+.title-text {
+  color: #F2D399;
+  font-family: 'metroretro';
+  font-size: 6rem;
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+}
 
-			@media only screen and (max-width: 600px) {
-				font-size: 2.5rem;
-				text-align: center;
-			}
-		}
-	}
+.page-content {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__center {
+    width: 100%;
+  }
+
+  &__side {
+    width: 3.5rem;
+  }
+}
+
+.profile-image-container {
+  position: relative;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.profile-image {
+  width: 50rem;
+
+  &__border {
+    width: 50rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    filter: hue-rotate(350deg);
+  }
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__tag {
+    &--left {
+      height: 2rem;
+    }
+
+    &--right {
+      height: 2rem;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
 }
