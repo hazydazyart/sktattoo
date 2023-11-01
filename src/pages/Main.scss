@@ -1,17 +1,11 @@
-.profile-image-container {
+.profile-container {
   position: relative;
-  text-align: center;
-  margin: 2rem 0;
 }
 
-.profile-image {
-  width: 50rem;
-
-  &__border {
-    width: 50rem;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    filter: hue-rotate(350deg);
-  }
+.profile-pic {
+  background-image: url('../images/profile.jpeg');
+  width: 35rem;
+  height: 35rem;
+  box-shadow: 0 0 50px 50px black inset;
+  background-size: contain;
 }

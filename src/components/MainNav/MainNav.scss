@@ -1,7 +1,7 @@
 @import '../../scss/fonts';
 
 .main-nav {
-	font-family: 'bittersweet';
+	font-family: 'amarante';
 	width: 100%;
 	padding: 0 2rem;
 
@@ -27,8 +27,8 @@
 		}
 
 		&--link {
-			color: #F2D399;
-			font-size: 5rem;
+			color: #e6e6e6;
+			font-size: 3rem;
 			text-decoration: none;
 
 			@media only screen and (max-width: 600px) {

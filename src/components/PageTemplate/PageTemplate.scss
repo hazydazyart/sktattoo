@@ -1,7 +1,21 @@
 .homepage {
   min-height: 100vh;
   width: 100%;
-  background-color: rgb(35, 36, 40);
+  background-color: #000;
+
+  &__background-image {
+    background-image: url('../../images/botanical-roses.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    height: 68%;
+    position: absolute;
+    bottom: 0;
+    box-shadow: -33px 153px 122px -1px black inset;
+    filter: brightness(65%);
+  }
 
   &__divider-container {
     text-align: center;
@@ -10,7 +24,8 @@
   &__divider {
     -webkit-transform: scaleY(-1);
     transform: scaleY(-1);
-    height: 8rem;
+    width: 100%;
+    filter: saturate(0%) brightness(70%) contrast(200%);
   }
 
   &__title {
@@ -22,13 +37,15 @@
 
   &__corner {
     &--left {
-      height: 12rem;
+      height: 11rem;
+      filter: grayscale(1) brightness(70%);
     }
 
     &--right {
-      height: 12rem;
+      height: 11rem;
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
+      filter: grayscale(1) brightness(70%);
     }
   }
 
@@ -43,16 +60,17 @@
 }
 
 .address {
-  font-size: 2rem;
-  color: #F2D399;
-  font-family: 'bittersweet';
+  font-size: 1.5rem;
+  color: #9c9c9c;
+  font-family: 'amarante';
   text-align: center;
+  margin: 0 0 1rem 0;
 }
 
 .title-text {
-  color: #F2D399;
-  font-family: 'metroretro';
-  font-size: 6rem;
+  color: #9c9c9c;
+  font-family: 'floralcaps';
+  font-size: 5.8rem;
   font-weight: normal;
   margin: 0;
   text-align: center;
@@ -62,6 +80,10 @@
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  z-index: 2;
+  position: relative;
+  background: black;
+
 
   &__main {
     display: flex;
@@ -73,7 +95,8 @@
   }
 
   &__side {
-    width: 3.5rem;
+    width: 4rem;
+    filter: saturate(0%) brightness(70%) contrast(200%);
   }
 }
 
@@ -100,16 +123,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #9c9c9c;
 
   &__tag {
     &--left {
-      height: 2rem;
+      width: 6rem;
+      filter: grayscale(1) brightness(70%);
     }
 
     &--right {
-      height: 2rem;
+      width: 6rem;
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
+      filter: grayscale(1) brightness(70%);
     }
   }
 }
