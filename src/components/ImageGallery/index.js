@@ -32,7 +32,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture9)}
-          key={picture9.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -44,7 +43,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture2)}
-          key={picture2.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -56,7 +54,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture1)}
-          key={picture1.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -68,7 +65,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture4)}
-          key={picture4.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -82,7 +78,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture5)}
-          key={picture5.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -94,7 +89,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture6)}
-          key={picture6.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -106,7 +100,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture7)}
-          key={picture7.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -118,7 +111,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture8)}
-          key={picture8.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -132,7 +124,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture3)}
-          key={picture3.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -144,7 +135,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture10)}
-          key={picture10.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -156,7 +146,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture11)}
-          key={picture11.id + '-button'}
         >
           <img
             className='image-gallery__image'
@@ -168,7 +157,6 @@ export default function ImageGallery() {
           aria-label='View larger'
           className='image-gallery__button'
           onClick={() => handleImageClick(picture12)}
-          key={picture12.id + '-button'}
         >
           <img
             className='image-gallery__image'

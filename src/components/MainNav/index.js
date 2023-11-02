@@ -17,7 +17,7 @@ export default function MainNav() {
             <Link className='main-nav__list--link' to='/contact'>Contact</Link>
           </li>
           <li className='main-nav__list--item'>
-            <Link className='main-nav__list--link' to='/contact'>Shop</Link>
+            <a href='http://likehoneyprints.bigcartel.com/' target='_blank' className='main-nav__list--link'>Shop</a>
           </li>
         </ul>
       </nav>
