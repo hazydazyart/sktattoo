@@ -27,24 +27,156 @@ export default function ImageGallery() {
 
   return (
     <div className='image-gallery'>
-      {images.map(image => {
-        if (image.media_type !== 'VIDEO') {
-          return (
-            <button
-              aria-label='View larger'
-              className='image-gallery__button'
-              onClick={() => handleImageClick(image)}
-              key={image.id + '-button'}
-            >
-              <img
-                className='image-gallery__image'
-                src={image}
-              />
-              <div className='image-gallery__view-larger'>View</div>
-            </button>
-          )
-        }
-      })}
+      <div className='column'>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture9)}
+          key={picture9.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture9}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture2)}
+          key={picture2.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture2}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture1)}
+          key={picture1.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture1}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture4)}
+          key={picture4.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture4}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+      </div>
+      <div className='column'>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture5)}
+          key={picture5.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture5}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture6)}
+          key={picture6.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture6}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture7)}
+          key={picture7.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture7}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture8)}
+          key={picture8.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture8}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+      </div>
+      <div className='column'>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture3)}
+          key={picture3.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture3}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture10)}
+          key={picture10.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture10}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture11)}
+          key={picture11.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture11}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+        <button
+          aria-label='View larger'
+          className='image-gallery__button'
+          onClick={() => handleImageClick(picture12)}
+          key={picture12.id + '-button'}
+        >
+          <img
+            className='image-gallery__image'
+            src={picture12}
+          />
+          <div className='image-gallery__view-larger'>View</div>
+        </button>
+      </div>
       <Modal
         show={showModal}
         onHide={() => setShowModal(false)}

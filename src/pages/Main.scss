@@ -1,5 +1,16 @@
 .profile-container {
   position: relative;
+  display: flex;
+}
+
+h2 {
+  font-family: 'amarante';
+  font-size: 3rem;
+}
+
+.profile-text {
+  color: #e6e6e6;
+  width: 50%;
 }
 
 .profile-pic {

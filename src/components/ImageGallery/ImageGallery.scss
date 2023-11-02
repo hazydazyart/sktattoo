@@ -1,20 +1,12 @@
 .image-gallery {
-	$self: &;
-	display: inline-block;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 5px;    
-    -moz-column-count: 3;
-    -moz-column-gap: 5px;
-    column-count: 3;
-    column-gap: 5px;
-  	margin-right: auto;
-  	margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+	height: 57.5vh;
+  overflow: auto;
+  justify-content: center;
 
-  	@media only screen and (max-width: 600px) {
-  		-webkit-column-count: 2;
-  		-moz-column-count: 2;
-  		column-count: 2;
-  	}
+	$self: &;
 
 	&__image {
 		width: 100%;
@@ -97,4 +89,30 @@
 			transform: rotate(-45deg) translate(-50%, -50%);
 		}
 	}
+}
+
+.column {
+  flex: 32%;
+  max-width: 32%;
+  padding: 0 4px;
+}
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a6989f #363234;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #363234;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #9c2c3e;
+  border-radius: 20px;
+  border: 3px solid #363234;
 }
