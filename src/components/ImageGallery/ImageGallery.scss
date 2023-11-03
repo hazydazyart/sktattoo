@@ -1,20 +1,15 @@
 .image-gallery {
-	$self: &;
-	display: inline-block;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 5px;    
-    -moz-column-count: 3;
-    -moz-column-gap: 5px;
-    column-count: 3;
-    column-gap: 5px;
-  	margin-right: auto;
-  	margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
 
-  	@media only screen and (max-width: 600px) {
-  		-webkit-column-count: 2;
-  		-moz-column-count: 2;
-  		column-count: 2;
-  	}
+  @media only screen and (min-width: 1200px) {
+  	height: 57.5vh;
+  	overflow: auto;
+  }
+
+	$self: &;
 
 	&__image {
 		width: 100%;
@@ -62,39 +57,70 @@
 
 	&__image {
 		margin-bottom: 20px;
-		max-height: 1000px;
+		max-height: 600px;
+		max-width: 95vw;
 
-		@media only screen and (max-width: 600px) {
-			max-height: 400px;
-			max-width: 350px;
+		@media only screen and (min-width: 1200px) {
+			max-height: 1000px;
 		}
 	}
 
 	&__close-button {
-    	margin: -0.5rem -0.5rem -0.5rem auto;
+    margin: -0.5rem -0.5rem -0.5rem auto;
 		position: relative;
-	    display: block;
-	    width: 40px;
-	    height: 40px;
-	    font-size: 0;
-	    background-color: white;
-	    border: none;
-	    cursor: pointer;
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    background-color: white;
+    border: none;
+    cursor: pointer;
 
 		&:before, &:after {
-		    position: absolute;
-		    top: 50%;
-		    left: 50%;
-		    width: 3px;
-		    height: 20px;
-		    background-color: black;
-		    transform: rotate(45deg) translate(-50%, -50%);
-		    transform-origin: top left;
-		    content: '';
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    width: 3px;
+	    height: 20px;
+	    background-color: black;
+	    transform: rotate(45deg) translate(-50%, -50%);
+	    transform-origin: top left;
+	    content: '';
 		}
 
 		&:after {
 			transform: rotate(-45deg) translate(-50%, -50%);
 		}
 	}
+}
+
+.column {
+	flex: 1;
+	max-width: 100%;
+
+	@media only screen and (min-width: 1200px) {
+	  flex: 32%;
+	  max-width: 32%;
+	}
+  padding: 0 4px;
+}
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ba4e4e #363234;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #363234;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #ba4e4e;
+  border-radius: 20px;
+  border: 3px solid #363234;
 }

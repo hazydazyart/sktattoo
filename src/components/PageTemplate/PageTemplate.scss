@@ -1,49 +1,174 @@
-@import '../../scss/fonts';
+.homepage {
+  width: 100%;
+  background-color: #000;
+  overflow-x: hidden;
 
-.app {
- 	position: relative;
- 	min-height: 90vh;
+  @media only screen and (min-width: 1200px) {
+    height: 100vh;
+  }
 
- 	@media only screen and (max-width: 600px) {
- 		min-height: 84vh;
- 	}
+  &__background-image {
+    @media only screen and (min-width: 1200px) {
+      background-image: url('../../images/botanical-roses.jpg');
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: cover;
+      position: relative;
+      width: 100%;
+      height: 60%;
+      position: absolute;
+      bottom: 0;
+      box-shadow: -33px 250px 250px -1px black inset;
+      filter: brightness(65%) sepia(10%);
+    }
+  }
 
-	&__header {
-		height: 14vh;
+  &__divider-container {
+    text-align: center;
+  }
 
-		@media only screen and (max-width: 992px) {
-			height: auto;
-		}
-	}
+  &__divider {
+    -webkit-transform: translate(-50%) scaleY(-1);
+    transform: translate(-25%) scaleY(-1);
+    width: 200%;
+    filter: saturate(0%) brightness(70%) contrast(200%);
 
-	&__content {
-	    display: flex;
-	    flex-direction: row;
-	    flex-wrap: wrap;
-	    width: 100%;
+    @media only screen and (min-width: 1200px) {
+      -webkit-transform: scaleY(-1);
+      transform: scaleY(-1);
+      width: 100%;
+    }
+  }
 
-		@media only screen and (max-width: 600px) {
-			flex-direction: column;
-		}
+  &__title {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    justify-content: space-between;
+  }
 
-		&--container {
-    		display: flex;
-    		flex-direction: column;
-    		flex: 3;
+  &__corner {
+    &--left {
+      display: none;
+      @media only screen and (min-width: 1200px) {
+        display: block;
+      }
+      height: 11rem;
+      filter: grayscale(1) brightness(70%);
+    }
 
-    		@media only screen and (max-width: 600px) {
-    			padding: 0 20px;
-    		}
-		}
+    &--right {
+      display: none;
+      @media only screen and (min-width: 1200px) {
+        display: block;
+      }
+      height: 11rem;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: grayscale(1) brightness(70%);
+    }
+  }
 
-		&--title {
-			font-family: 'gothican';
-			font-size: 3rem;
+  &__bottom {
+  	padding: 2rem 0;
+  	text-align: center;
 
-			@media only screen and (max-width: 600px) {
-				font-size: 2.5rem;
-				text-align: center;
-			}
-		}
-	}
+  	img {
+  		width: 75%;
+  	}
+  }
+}
+
+.address {
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+  color: #9c9c9c;
+  font-family: 'amarante';
+  text-align: center;
+}
+
+.title-text {
+  color: #9c9c9c;
+  font-family: 'floralcaps';
+  font-size: 3.2rem;
+  padding: 0 1rem;
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 5.8rem;
+  }
+  font-weight: normal;
+  margin: 0;
+  text-align: center;
+}
+
+.page-content {
+  width: 100%;
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 2rem;
+    padding: 0;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    position: relative;
+    background: black;
+    height: 95vh;
+    border-bottom: 1px solid #9c9c9c;
+}
+
+  &__main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__center {
+    width: 100%;
+  }
+
+  &__side {
+    display: none;
+
+    @media only screen and (min-width: 1200px) {
+      display: block;
+      width: 4.2rem;
+      filter: saturate(0%) brightness(70%) contrast(200%);
+    }
+  }
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #9c9c9c;
+
+  &__tag {
+    &--left {
+      display: none;
+
+      @media only screen and (min-width: 1200px) {
+        width: 6rem;
+        filter: grayscale(1) brightness(70%);
+      }
+    }
+
+    &--right {
+      display: none;
+
+      @media only screen and (min-width: 1200px) {
+        width: 6rem;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: grayscale(1) brightness(70%);
+      }
+    }
+  }
 }

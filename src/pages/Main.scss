@@ -1,10 +1,54 @@
-.intro {
-
+.profile-page {
+  display: flex;
+  height: 100%;
+  justify-content: center;
 }
 
-.homepage {
+.profile-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  @media only screen and (min-width: 1200px) {
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+h2 {
+  font-family: 'amarante';
+  font-size: 3rem;
+  text-align: center;
+
+  @media only screen and (min-width: 1200px) {
+    text-align: left;
+  }
+}
+
+.profile-text {
+  color: #e6e6e6;
+  padding: 0 1rem 2rem 1rem;
+
+  @media only screen and (min-width: 1200px) {
+    color: #e6e6e6;
+    width: 50%;
+    font-size: 1.3rem;
+  }
+}
+
+.profile-pic {
   background-image: url('../images/profile.jpeg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
+  background-size: contain;
+  height: 20rem;
+  width: 20rem;
+  box-shadow: 0 0 20px 20px black inset;
+
+  @media only screen and (min-width: 1200px) {
+    width: 35rem;
+    height: 35rem;
+    box-shadow: 0 0 50px 50px black inset;
+    background-size: contain;
+  }
 }

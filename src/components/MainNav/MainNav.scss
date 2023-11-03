@@ -1,12 +1,13 @@
 @import '../../scss/fonts';
 
 .main-nav {
-	display: flex;
-    flex-direction: column;
-    flex: 1;
-	font-family: 'gothican';
-	background-color: rgba(0, 0, 0, .6);
-	box-shadow: 0 0 10px 10px rgba(0, 0, 0, .6);
+	font-family: 'amarante';
+	width: 100%;
+	padding: 0 1rem;
+
+	@media only screen and (min-width: 1200px) {
+		padding: 0 2rem;
+	}
 
 	@media only screen and (max-width: 600px) {
 		width: 100%;
@@ -19,49 +20,27 @@
 
 	&__list {
 		list-style: none;
-		margin-top: 0;
-		padding:  100px 0 0 100px;
-
-		@media only screen and (max-width: 600px) {
-			padding: 0;
-		}
-
-		@media only screen and (min-width: 601px) and (max-width: 991px) {
-			padding: 30px 0 0 30px;
-		}
-
-		@media only screen and (min-width: 992px) {
-			padding: 0 20px;
-		}
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 
 		&--item {
-			padding-bottom: 60px;
-
-			@media only screen and (max-width: 600px) {
-				padding-bottom: 20px;
-				display: inline;
-			}
+			padding:  1rem 0;
 		}
 
 		&--link {
-			color: #e381e4;
-			padding-left: 30px;
-			font-size: 5rem;
+			color: #e6e6e6;
+			font-size: 1.5rem;
 			text-decoration: none;
 
-			@media only screen and (max-width: 600px) {
-				font-size: 2rem;
-				padding: 0;
-				margin-left: 15px;
-			}
-
-			@media only screen and (min-width: 601px) and (max-width: 991px) {
-				padding: 20px 20px 0 20px;
+			@media only screen and (min-width: 1200px) {
 				font-size: 3rem;
 			}
 
 			&:hover {
-				color: #580059;
+				color: #ba4e4e;
 			}
 		}
 	}

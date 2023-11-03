@@ -4,9 +4,13 @@ import './ContactForm.scss';
 
 export default function Contact() {
   const [message, setMessage] = useState('');
+  const [hasError, setHasError] = useState(false);
+  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [file, setFile] = useState();
   const uploadRef = useRef(null);
   const formRef = useRef(null);
+  const pageRef = useRef(null);
+  const maxImgSize = 50000;
 
   init('user_3AIpj3qJ9uTGbPExw1qby');
 
@@ -16,22 +20,46 @@ export default function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    pageRef.current.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
 
-    sendForm('service_lcjhbpj', 'template_fxt1asb', formRef.current)
-      .then((result) => {
-          setMessage('Email sent!')
-      }, (error) => {
-          setMessage(error.text);
-      });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    if (file && file.size > 50000) {
+      setMessage('Reference image must be 500kb or smaller.')
+      setHasError(true)
+    } else {
+          setMessage("Thanks for your interest! I'll get back to you as soon as I can.")
+          setHasError(false)
+          setHasSubmitted(true)
+      // sendForm('service_lcjhbpj', 'template_fxt1asb', formRef.current)
+      //   .then((result) => {
+      //     setMessage("Thanks for your interest! I'll get back to you as soon as I can.")
+      //     setHasError(false)
+      //     setHasSubmitted(true)
+      //   }, (error) => {
+      //       setMessage(error.text);
+      //   });
+    }
   };
 
   const changeHandler = (e) => {
     setFile(e.target.files[0]);
   };
 
+  let messageClassName = 'contact-form__notification';
+
+  if (hasError) messageClassName = 'contact-form__notification contact-form__notification--error'
+  if (hasSubmitted) messageClassName = 'contact-form__notification contact-form__notification--success'
+
   return (
-    <div className='contact-form'>
-      {message && <div className='contact-form__notification' aria-live='polite'>{message}</div>}
+    <div className='contact-form' ref={pageRef}>
+      <div className={messageClassName} aria-live='polite'>{message}</div>
       <form ref={formRef} onSubmit={sendEmail}>
         <div>
           <fieldset>
@@ -80,9 +108,11 @@ export default function Contact() {
           </div>
           <div className='contact-form__upload'>
             <label className='contact-form__text--label' htmlFor='reference'>Reference image</label>
-            <div className='contact-form__upload--button' role='button' onClick={() => handleUploadClick()}>Upload a file</div>
-            <input type='file' id='reference' name='reference' ref={uploadRef} onChange={changeHandler} />
-            {file && <div>{file.name}</div>}
+            <div className='contact-form__upload-input'>
+              <div className='contact-form__upload--button' role='button' onClick={() => handleUploadClick()}>Upload a file</div>
+              <input type='file' id='reference' name='reference' ref={uploadRef} onChange={changeHandler} />
+              {file && <div>{file.name}</div>}
+            </div>
           </div>
         </fieldset>
         <button className='contact-form__submit'>Submit</button>
