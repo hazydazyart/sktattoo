@@ -37,14 +37,14 @@ export default function Contact() {
           setMessage("Thanks for your interest! I'll get back to you as soon as I can.")
           setHasError(false)
           setHasSubmitted(true)
-      // sendForm('service_lcjhbpj', 'template_fxt1asb', formRef.current)
-      //   .then((result) => {
-      //     setMessage("Thanks for your interest! I'll get back to you as soon as I can.")
-      //     setHasError(false)
-      //     setHasSubmitted(true)
-      //   }, (error) => {
-      //       setMessage(error.text);
-      //   });
+          sendForm('service_lcjhbpj', 'template_fxt1asb', formRef.current)
+            .then((result) => {
+              setMessage("Thanks for your interest! I'll get back to you as soon as I can.")
+              setHasError(false)
+              setHasSubmitted(true)
+            }, (error) => {
+                setMessage(error.text);
+            });
     }
   };
 
